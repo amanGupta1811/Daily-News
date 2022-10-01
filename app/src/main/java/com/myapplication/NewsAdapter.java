@@ -22,33 +22,17 @@ public  class NewsAdapter extends RecyclerView.Adapter<NewsViewHolder> {
 
     private News news;
 
-    //private News title;
-
 
     NewsAdapter(ClickInterface listner) {
         this.listner = listner;
-
-
-
-      //ArrayList<String>items = new ArrayList<>();
-
-
-
-       // this.clickInterface = clickInterface;
-        //this.aData = data;
 
     }
 
     ArrayList<News>aData = new ArrayList<>();
 
-
-
-
-
-
     @Override
     public NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-      // ArrayList<String>items = new ArrayList<>();
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_news, parent, false);
         NewsViewHolder viewHolder = new NewsViewHolder(view);
 
@@ -67,7 +51,7 @@ public  class NewsAdapter extends RecyclerView.Adapter<NewsViewHolder> {
 
         News currentItem;
        currentItem = aData.get(position);
-        newsViewHolder.title1.setText(currentItem.getTitle());
+       newsViewHolder.title1.setText(currentItem.getTitle());
        newsViewHolder.author1.setText( currentItem.getAuthor());
 
        Glide.with(newsViewHolder.itemView.getContext()).load(currentItem.getUrlToImage()).into(newsViewHolder.image1);
