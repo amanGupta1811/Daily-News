@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -15,11 +14,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -46,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements ClickInterface {
         RecyclerView recyclerView6 = findViewById(R.id.recyclerView6);
         RecyclerView recyclerView7 = findViewById(R.id.recyclerView7);
 
+
         national(recyclerView);
         international(recyclerView2);
         buisness(recyclerView3);
@@ -58,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements ClickInterface {
     public void national(RecyclerView re){
         re.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         mAdapter = new NewsAdapter(this);
+       // String politics = "politics";
         fetcheData();
         re.setAdapter(mAdapter);
 }
@@ -108,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements ClickInterface {
         RequestQueue requestQueue;
         requestQueue = Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest =  new JsonObjectRequest(Request.Method.GET,
-               "https://newsapi.org/v2/top-headlines?country=in&category=politics&apiKey=dbb46abefe8642fb9033210ec6cd7093"
+                "https://newsapi.org/v2/top-headlines?country=in&category=politics&apiKey=dbb46abefe8642fb9033210ec6cd7093"
                 , null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

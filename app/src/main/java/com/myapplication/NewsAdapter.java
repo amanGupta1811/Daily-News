@@ -15,13 +15,11 @@ import java.util.ArrayList;
 
 public  class NewsAdapter extends RecyclerView.Adapter<NewsViewHolder> {
 
-   // private ArrayList<News> aData;
     private LayoutInflater aInflater;
     private ClickInterface clickInterface;
     private ClickInterface listner;
 
     private News news;
-
 
     NewsAdapter(ClickInterface listner) {
         this.listner = listner;
